@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.heading h1 {
+  color: white;
+  font-family: roboto;
+  margin: 20px;
+  margin-left: 30px;
+  font-size: 40px;
+}
+
+.flex {
+  display: flex;
+}
+
+.moveicon {
+  background-color: #191919;
+
+  height: 100px;
+}
+
+.movebutton {
+  background: transparent;
+  padding: 20px;
+  border-radius: 50%;
+  border: solid 2px white;
+  cursor: pointer;
+}
+
+.buttons {
+  padding: 20px;
+  gap: 10px;
+}
+
+.result {
+  color: white;
+  font-size: 40px;
+  font-family: roboto;
+  font-weight: bold;
+  margin-top: 40px;
+  margin-left: 20px;
+}
+
+.moves {
+  color: white;
+  font-family: roboto;
+  margin-left: 20px;
+}
+
+
+.scoredisplay{
+    color: white;
+
+    margin: 20px;
+    font-family: roboto;
+    font-size: 30px;
+    margin-top: 40px;
+}
+
+.resetbutton{
+    padding: 20px;
+}
+
+.resetbutton button{
+    padding: 10px;
+    border-radius: 0px;
+    background-color: white;
+    color: black;
+    font-family: roboto;
+    border: 2px solid black;
+}

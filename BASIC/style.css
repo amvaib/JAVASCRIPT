@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.button{
+    display: flex;
+    margin-left: auto;
+    margin-top: 30vh;
+    margin-right: auto;
+    background-color: rgb(9, 185, 9);
+    color: white;
+    border: 1px solid black;
+
+    font-size: 200px;
+    padding: 20px;
+    font-family: roboto;
+    border-radius: 20%;
+    transition: 0.5s ease-in-out;
+    
+
+}
+
+.button:hover{
+    background-color: rgb(216, 121, 12);
+    transform: scale(1.1);
+    border-radius: 50%;
+
+}
