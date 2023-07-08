@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CART QUANTITY FEATURE</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>CART QUANTITY</h1>
+    <div class="container">
+
+        <button class="showCart" onclick="
+            console.log(`Cart Quantity = ${cartQuantity}`)
+            ">
+            SHOW QUANTITY
+        </button>
+
+         <button class="addtocart" onclick="
+
+         cartQuantity += 1;
+
+         console.log(`Cart Quantity = ${cartQuantity}`)
+         
+         ">
+            ADD TO CART
+         </button>
+
+        <button class="plus2" onclick="
+
+        cartQuantity += 2;
+
+        console.log(`Cart Quantity = ${cartQuantity}`)">
+
+            +2
+
+        </button>
+
+        <button class="plus3" onclick="
+
+        cartQuantity += 3;
+
+        console.log(`Cart Quantity = ${cartQuantity}`)">
+            +3
+        </button>
+
+        <button class="resetcart" onclick="
+
+        alert('Your cart has been reset')
+
+        cartQuantity = 0;
+
+        console.log(`Cart Quantity = ${cartQuantity}`)">
+
+            RESET
+        </button>
+
+    </div>
+
+  </body>
+
+  <script>
+    let cartQuantity = 0;
+  </script>
+</html>
