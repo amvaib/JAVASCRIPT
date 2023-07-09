@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YOUTUBE</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <button class="subscribebutton" onclick="subscribe();">
+        SUBSCRIBE
+    </button>
+
+
+
+
+<script>
+
+    function subscribe(){
+        const buttonElement = document.querySelector(".subscribebutton");
+        if(buttonElement.innerText === 'SUBSCRIBE'){
+            buttonElement.innerText = 'SUBSCRIBED'
+            buttonElement.classList.add('issubscribed')
+        } else{
+            buttonElement.innerText = 'SUBSCRIBE'
+            buttonElement.classList.remove('issubscribed')
+            
+        }
+
+        
+    }
+
+</script>
+    
+</body>
+</html>
