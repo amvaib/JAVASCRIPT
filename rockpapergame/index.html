@@ -30,15 +30,26 @@
             SCISSOR
         </button>
 
+
+        <p class="resultdisplay"></p>
+        <p class="movesdisplay"></p>
+
+        <p class="scoredisplay">
+
+        </p>
+
         <button class="resetbutton" onclick="
         score.wins = 0;
         score.losses = 0;
         score.ties =0;
         
         localStorage.removeItem('score');
+        updateScoreElement();
 
-        alert(`YOUR SCORE HAS BEEN RESET 
-WINS:0 , LOSSES:0 , TIES:0 `)
+        document.querySelector('.resultdisplay')
+        .innerHTML = 'YOUR SCORE HAS BEEN RESET'
+
+        
         ">
             RESET SCORE
         </button>
@@ -54,6 +65,11 @@ WINS:0 , LOSSES:0 , TIES:0 `)
 
         };
 
+        
+        updateScoreElement();
+
+
+
         // if(score === null){
         //     score = {
         //         wins: 0,
@@ -62,7 +78,8 @@ WINS:0 , LOSSES:0 , TIES:0 `)
         //     };
         // }
 
-        
+
+
 
 
 
@@ -70,9 +87,9 @@ WINS:0 , LOSSES:0 , TIES:0 `)
         function playGame(playerMove) {
 
             let computerMove = pickComputerMove();
-            let result = ''
+            let result = '';
 
-            
+
 
 
             if (playerMove === 'ROCK') {
@@ -87,7 +104,7 @@ WINS:0 , LOSSES:0 , TIES:0 `)
                     result = 'YOU WON'
                 }
 
-                
+
 
             }
 
@@ -103,7 +120,7 @@ WINS:0 , LOSSES:0 , TIES:0 `)
                     result = 'YOU LOST'
                 }
 
-                
+
 
             }
 
@@ -119,7 +136,7 @@ WINS:0 , LOSSES:0 , TIES:0 `)
                     result = 'TIE'
                 }
 
-                
+
 
             }
 
@@ -133,14 +150,26 @@ WINS:0 , LOSSES:0 , TIES:0 `)
                 score.ties += 1;
             }
 
-            localStorage.setItem('score' , JSON.stringify(score));
+            localStorage.setItem('score', JSON.stringify(score));
 
-            alert(`YOU PICKED ${playerMove} COMPUTER PICKED ${computerMove}. ${result}
-WINS: ${score.wins} LOSSES: ${score.losses} TIES:${score.ties}`)
+            
+            updateScoreElement();
+
+            document.querySelector(".resultdisplay")
+            .innerHTML = result;
+
+            document.querySelector(".movesdisplay").innerHTML = `YOU - ${playerMove} | COMPUTER - ${computerMove}`
 
 
 
+        }
 
+        
+
+        function updateScoreElement() {
+            document.querySelector(
+                ".scoredisplay"
+            ).innerHTML = `Wins: ${score.wins} , Losses: ${score.losses} , Ties: ${score.ties}`;
         }
 
 
@@ -159,6 +188,7 @@ WINS: ${score.wins} LOSSES: ${score.losses} TIES:${score.ties}`)
             }
             return computerMove;
         }
+
 
     </script>
 </body>
