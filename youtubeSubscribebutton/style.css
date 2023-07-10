@@ -1,0 +1,26 @@
+.subscribebutton{
+    background-color: rgb(227, 36, 36);
+    color: white;
+    border: 1px solid black;
+    font-family: roboto;
+    font-size: 50px;
+    border-radius: 300px;
+    padding: 10px;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+
+    
+    
+
+}
+
+.issubscribed{
+    background-color: greenyellow;
+    color: black;
+    border: 1px solid black;
+    font-family: roboto;
+    font-size: 50px;
+    border-radius: 300px;
+    padding: 10px;
+    
+}
