@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODOLIST</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>TO-DO LIST</h1>
+    <div class="todoinputgrid">
+
+        <input class="input" type="text" placeholder="Todo name" onkeydown="handleKeyDown(event)">
+    
+        <input class="dateinput " type="date" name="" id="">
+        <button class="addbutton" onclick="
+        addFun();
+        ">
+            ADD
+        </button>
+    </div>
+
+    <div class="jstodolist todogrid">
+
+
+
+    </div>
+
+
+    <script>
+        const todolist = [{
+            name: 'hello' ,
+            dueDate: '2022-12-22'
+        }];
+        renderTodolist();
+
+
+        function renderTodolist() {
+
+            let todolistHTML = '';
+
+            for (let i = 0; i < todolist.length; i++) {
+                const todoObject = todolist[i];
+                const name = todoObject.name;
+                const dueDate = todoObject.dueDate;
+
+                const html = `<div>${name}</div> <div>${dueDate}</div>
+                    <button class = "generatedbutton" onclick="
+                    todolist.splice(${i}, 1);
+                    renderTodolist();
+                    ">
+                    DELETE
+                    </button>
+                    `;
+                todolistHTML += html;
+
+
+
+
+
+            }
+
+            document.querySelector('.jstodolist').innerHTML = todolistHTML;
+
+        }
+
+
+
+        function addFun() {
+            const inputElement = document.querySelector('.input');
+            const name = inputElement.value;
+            
+            const dateElement = document.querySelector('.dateinput');
+            const date = dateElement.value;
+            
+            todolist.push({
+                name: name,
+                dueDate: date
+            });
+
+            
+
+            inputElement.value = '';
+
+            renderTodolist();
+        }
+
+        function handleKeyDown(event) {
+
+            if (event.key === 'Enter') {
+                addFun();
+            }
+
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+.todogrid , .todoinputgrid{
+    display: grid;
+    grid-template-columns: 200px 150px 100px;
+    column-gap: 10px;
+    row-gap: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    align-items: center;
+    
+}
+
+
+.todoinputgrid{
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.dateinput{
+    padding: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.addbutton{
+    padding: 7px;
+    background-color: #008000;
+    border: solid black 1px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+
+
+.generatedbutton{
+    padding: 7px;
+    background-color: #9e0303;
+    border: solid black 1px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
