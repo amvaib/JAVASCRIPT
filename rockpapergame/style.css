@@ -1,17 +1,85 @@
-/* *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-} */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
+
 
 .buttoncontainer{
     margin: 30px;
+    display: flex;
+    gap: 10px;
     
 }
 
 
 .buttoncontainer button{
     padding: 20px;
-
-    
 }
+
+.otherelements{
+    margin-left: 50px;
+}
+
+body{
+    background-color: #191919;
+}
+
+p {
+    color: white;
+    font-family: roboto;
+
+}
+
+h1{
+    color: white;
+    font-family: roboto;
+    margin-left: 30px;
+}
+
+
+.rock img{
+    height: 120px;
+    cursor: pointer;
+}
+
+.scissor img{
+    height: 120px;
+    cursor: pointer;
+}
+
+.paper img {
+    height: 120px;
+    cursor: pointer;
+}
+
+.rock , .paper , .scissor{
+    background-color: transparent;
+    border-radius: 50%;
+    border: solid white 3px;
+    transition: 0.3s ease-in-out;
+}
+
+.rock:hover , .paper:hover , .scissor:hover{
+    background-color: white;
+    border-color: black;
+
+}
+
+.resetbutton{
+    padding: 20px;
+    font-family: roboto;
+    font-size: 15px;
+    cursor: pointer;
+}
+.resetbutton:hover{
+    background-color: rgb(196, 171, 34);
+    border: solid 2px black;
+    
+
+
+}
+
+.resultdisplay{
+    font-size: 40px;
+
+}
+

@@ -11,33 +11,40 @@
 
 <body>
 
+    <h1>ROCK PAPER SCISSOR</h1>
+
     <div class="buttoncontainer">
         <button class="rock" onclick="
             playGame('ROCK');
             ">
-            ROCK
+            <img src="./images/rock-emoji.png" alt="ROCK">
         </button>
 
         <button class="paper" onclick="
         playGame('PAPER');
         ">
-            PAPER
+            <img src="./images/paper-emoji.png" alt="PAPER">
         </button>
 
         <button class="scissor" onclick="
         playGame('SCISSOR')
         ">
-            SCISSOR
+            <img src="./images/scissor-emoji.png" alt="SCISSOR">
         </button>
 
 
+    </div>
+    <div class="otherelements">
+
         <p class="resultdisplay"></p>
-        <p class="movesdisplay"></p>
-
-        <p class="scoredisplay">
-
+        <p class="movesdisplay">
+            
         </p>
-
+    
+        <p class="scoredisplay">
+    
+        </p>
+    
         <button class="resetbutton" onclick="
         score.wins = 0;
         score.losses = 0;
@@ -45,16 +52,15 @@
         
         localStorage.removeItem('score');
         updateScoreElement();
-
+    
         document.querySelector('.resultdisplay')
         .innerHTML = 'YOUR SCORE HAS BEEN RESET'
-
+    
         
         ">
             RESET SCORE
         </button>
     </div>
-
 
     <script>
 
@@ -158,7 +164,7 @@
             document.querySelector(".resultdisplay")
             .innerHTML = result;
 
-            document.querySelector(".movesdisplay").innerHTML = `YOU - ${playerMove} | COMPUTER - ${computerMove}`
+            document.querySelector(".movesdisplay").innerHTML = `YOU <img src="./images/${playerMove}-emoji.png "> <img src="./images/${computerMove}-emoji.png" > COMPUTER`
 
 
 
