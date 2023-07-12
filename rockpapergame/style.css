@@ -78,6 +78,12 @@ h1{
 
 }
 
+.autoPlay{
+    padding: 20px;
+    font-family: roboto;
+    font-size: 15px;
+    cursor: pointer;
+}
 .resultdisplay{
     font-size: 40px;
 
