@@ -41,15 +41,14 @@
         function renderTodolist() {
 
             let todolistHTML = '';
+            todolist.forEach(function(todoObject , index){
 
-            for (let i = 0; i < todolist.length; i++) {
-                const todoObject = todolist[i];
                 const name = todoObject.name;
                 const dueDate = todoObject.dueDate;
 
                 const html = `<div>${name}</div> <div>${dueDate}</div>
                     <button class = "generatedbutton" onclick="
-                    todolist.splice(${i}, 1);
+                    todolist.splice(${index}, 1);
                     renderTodolist();
                     ">
                     DELETE
@@ -59,9 +58,8 @@
 
 
 
-
-
-            }
+            })
+            
 
             document.querySelector('.jstodolist').innerHTML = todolistHTML;
 
