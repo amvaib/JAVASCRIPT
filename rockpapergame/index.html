@@ -14,21 +14,15 @@
     <h1>ROCK PAPER SCISSOR</h1>
 
     <div class="buttoncontainer">
-        <button class="rock" onclick="
-            playGame('ROCK');
-            ">
+        <button class="rock">
             <img src="./images/rock-emoji.png" alt="ROCK">
         </button>
 
-        <button class="paper" onclick="
-        playGame('PAPER');
-        ">
+        <button class="paper">
             <img src="./images/paper-emoji.png" alt="PAPER">
         </button>
 
-        <button class="scissor" onclick="
-        playGame('SCISSOR')
-        ">
+        <button class="scissor" >
             <img src="./images/scissor-emoji.png" alt="SCISSOR">
         </button>
 
@@ -69,6 +63,22 @@
     </div>
 
     <script>
+
+        document.querySelector('.rock')
+        .addEventListener('click' , () => {
+            playGame('ROCK')
+        });
+
+        document.querySelector('.paper')
+        .addEventListener('click' , () => {
+            playGame('PAPER')
+        });
+
+        document.querySelector('.scissor')
+        .addEventListener('click' , () => {
+            playGame('SCISSOR')
+        });
+
 
         let score = JSON.parse(localStorage.getItem('score')) || {
             wins: 0,
