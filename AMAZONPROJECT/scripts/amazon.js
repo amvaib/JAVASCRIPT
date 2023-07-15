@@ -1,9 +1,7 @@
 let productsHTML = '';
 
 products.forEach((product) => {
-
-    productsHTML +=  ` 
-    
+    productsHTML += ` 
         <div class="product-container">
             <div class="product-image-container">
                 <img class="product-image" src="${product.image}">
@@ -24,8 +22,8 @@ products.forEach((product) => {
                 $${(product.priceCents / 100).toFixed(2)}
             </div>
 
-            <div class="product-quantity-container">
-                <select>
+            <div class="product-quantity-container productquantityjs">
+                <select class="quantity-select">
                     <option selected value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -52,55 +50,33 @@ products.forEach((product) => {
             </button>
         </div>
     `;
-
 });
 
 document.querySelector('.productgridjs').innerHTML = productsHTML;
 
-document.querySelectorAll('.jsaddtocart')
-    .forEach((button) => {
+document.querySelectorAll('.jsaddtocart').forEach((button, index) => {
+    button.addEventListener('click', () => {
+        const productId = button.dataset.productId;
+        const quantitySelect = document.querySelectorAll('.quantity-select')[index];
+        const quantity = parseInt(quantitySelect.value);
 
-        button.addEventListener('click', () => {
-            const productId = button.dataset.productId;
+        let matchingItem = cart.find((item) => item.productId === productId);
 
-            let matchingItem;
-            cart.forEach((item) => {
-                if(productId === item.productId){
-                    matchingItem =  item;
-
-                }
-            })
-
-            if(matchingItem){
-                matchingItem.quantity +=1;
-            } else {
-
-                cart.push({
-                    productId: productId,
-                    quantity: 1
-                });
-console.log(cart);    
-                
-            }
-
-            let cartQuantitiy = 0;
-            cart.forEach((item) => {
-                cartQuantitiy += 1;
+        if (matchingItem) {
+            matchingItem.quantity += quantity;
+        } else {
+            cart.push({
+                productId: productId,
+                quantity: quantity
             });
-            console.log('cartQuantity');
-            console.log('cart');
+        }
 
-
-            document.querySelector('.jscartquantity').innerHTML = cartQuantitiy;    
-
-
-
-            
-            
-
-
+        let cartQuantity = 0;
+        cart.forEach((item) => {
+            cartQuantity += item.quantity;
         });
 
-
-
+        document.querySelector('.jscartquantity').innerHTML = cartQuantity;
+        console.log(cart);
     });
+});
