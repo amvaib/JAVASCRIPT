@@ -83,6 +83,18 @@ console.log(cart);
                 
             }
 
+            let cartQuantitiy = 0;
+            cart.forEach((item) => {
+                cartQuantitiy += 1;
+            });
+            console.log('cartQuantity');
+            console.log('cart');
+
+
+            document.querySelector('.jscartquantity').innerHTML = cartQuantitiy;    
+
+
+
             
             
 
