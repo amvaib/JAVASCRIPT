@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+
+    <h1>WELCOME VAIBHAV</h1>
+
+    <a href=""></a>
+
+    <div class="content">
+        <p>HI</p>
+        <h2>hello</h2>
+
+    </div>
+
+    <script>
+        //setting attribute
+    //    let linkElement = document.querySelector('a')
+    //    linkElement.setAttribute('href', 'https://youtu.be/2IGDsD-dLF8')
+    //    console.log(linkElement.getAttribute('href'))
+
+    //    linkElement.innerText = 'CLICK ME'
+
+    //CLASSLIST ADD,REMOVE,REPLACE
+
+    // let heading = document.querySelector('h1')
+
+    // heading.classList.add('SEX');
+
+    // heading.classList.remove('SEX')
+
+    // heading.classList.replace('SEX','MOJMASTI');
+
+    let parentElement = document.querySelector('.content');
+
+    console.log(parentElement.children)
+
+    //to convert it into array we use Array.from();
+
+    Array.from(parentElement.children).forEach(function(element){
+        element.classList.add('FUCK')
+    })
+
+    let childElement = document.querySelector('p')
+    console.log(childElement.parentElement)
+
+    console.log(childElement.nextElementSibling)
+
+    //previouselementsibling is also there
+
+
+    
+
+
+
+    </script>
+    
+</body>
+</html>
