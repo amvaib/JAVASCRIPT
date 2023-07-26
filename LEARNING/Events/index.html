@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVENTS</title>
+</head>
+<body>
+
+    <h1>TODO LIST</h1>
+
+    <ul>
+        <li>EAT</li>
+        <li>SLEEP</li>
+        <li>REPEAT</li>
+
+
+    </ul>
+
+    <button style="padding: 20px; color: white; background-color: black; border-radius: 40px;">CLICK ME</button>
+
+    <script>
+
+        // let listElement = document.querySelectorAll('li')
+        // // console.log(listElement)
+
+        // listElement.forEach(function(element){
+
+
+        //     element.addEventListener('click', function(e){
+        //         console.log(e.target)
+        //         console.log('item is clicked')
+        //         // e.target.style.textDecoration = 'line-through'
+
+        //         // e.target.remove();
+        //     })
+
+
+        // })
+
+        let buttonElement = document.querySelector('button')
+
+        const ul = document.querySelector('ul')
+
+        buttonElement.addEventListener('click',function(){
+            let li = document.createElement('li')
+            ul.append(li)//prepend for adding in starting
+
+            li.textContent = "teri bhen ki"
+        })
+
+
+
+    </script>
+    
+</body>
+</html>
